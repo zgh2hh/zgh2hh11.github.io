@@ -90,24 +90,38 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>你好，欢迎来到我的个人技术博客</p>
-<hr>
-<h1 id="ok"><a href="#ok" class="headerlink" title="ok"></a>ok</h1><blockquote>
-<p>jjidasd</p>
+        <h1 id="Vue2-0组件——"><a href="#Vue2-0组件——" class="headerlink" title="Vue2.0组件——"></a>Vue2.0组件——</h1><hr>
+<h1 id="环形进度条-仪表盘"><a href="#环形进度条-仪表盘" class="headerlink" title="环形进度条(仪表盘)"></a>环形进度条(仪表盘)</h1><blockquote>
+<p>涉及技术</p>
 <ul>
-<li>test1</li>
-<li>test2</li>
+<li>vue2.0</li>
+<li>svg<br>参考</li>
+<li><a href="http://stackoverflow.com/questions/5736398/how-to-calculate-the-svg-path-for-an-arc-of-a-circle" target="_blank" rel="external">describeArc</a>-用于svg中仪表盘各个点对应的坐标，角度</li>
+<li><a href="http://www.w3cplus.com/svg/pure-svg-progress-circles.html" target="_blank" rel="external">纯SVG实现进度圈</a></li>
 </ul>
-<p>ok2</p>
+<hr>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><ol>
+<li>最终的仪表盘，见下图水质部分(上面的是vux自带的环形进度条，功能略微简单)：<br><img src="http://osprt4338.bkt.clouddn.com/%E9%80%89%E5%8C%BA_051.png" alt="仪表盘"><br></li>
+</ol>
 </blockquote>
-<p><strong>title</strong></p>
-<p><code>var gulp = require(&#39;gulp&#39;),
-    plugins = require(&#39;gulp-load-plugins&#39;)();</code></p>
+<ol>
+<li>仪表盘主要有以下几个部分组成：</li>
+</ol>
+<ul>
+<li>最小值:min(默认为0)</li>
+<li>警戒最小值：alert-min</li>
+<li>警戒最大值：alert-max</li>
+<li>最大值：max(默认为100)</li>
+</ul>
+<ol>
+<li>Vue2.0的调用方式<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;div class="water"&gt;</div><div class="line">    &lt;p&gt;水质&lt;/p&gt;</div><div class="line">    &lt;Flexbox wrap="wrap" :gutter="0" justify="center"&gt;</div><div class="line">      &lt;FlexboxItem :span="1/3" v-for='(water, i) in monitor.water' :key="water.peng_type"&gt;</div><div class="line">        &lt;Gauge :label="water.title"</div><div class="line">               :value="water.value | convert"</div><div class="line">               :min="water.min_value | convert"</div><div class="line">               :max="water.max_value | convert"</div><div class="line">               :alert-min="water.min_alert_value | convert"</div><div class="line">               :alert-max="water.max_alert_value | convert"</div><div class="line">               :peng-name="water.title"</div><div class="line">               field-name="一号水质监测点"&gt;</div><div class="line">        &lt;/Gauge&gt;</div><div class="line">      &lt;/FlexboxItem&gt;</div><div class="line">    &lt;/Flexbox&gt;</div><div class="line">  &lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
 <h2 id="大标题"><a href="#大标题" class="headerlink" title="大标题"></a>大标题</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zgh2hh.github.io/2017/06/26/first/" data-id="cj4dy775c00006g2kf4w07a97" class="article-share-link">Share</a>
+      <a data-url="http://zgh2hh.github.io/2017/06/26/first/" data-id="cj4to5drt0000co2kyez7fzse" class="article-share-link">Share</a>
       
       
     </footer>
@@ -152,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zgh2hh.github.io/2017/06/23/hello-world/" data-id="cj4dy775g00016g2khxq6wdcs" class="article-share-link">Share</a>
+      <a data-url="http://zgh2hh.github.io/2017/06/23/hello-world/" data-id="cj4to5drx0001co2kbi4gmhc0" class="article-share-link">Share</a>
       
       
     </footer>
